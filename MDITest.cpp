@@ -14,6 +14,8 @@
 #include "MDITestView.h"
 #include "CCircleDoc.h"
 #include "CCircleView.h"
+#include "CBitmapDoc.h"
+#include "CBitmapView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -105,6 +107,13 @@ BOOL CMDITestApp::InitInstance()
 		RUNTIME_CLASS(CCircleDoc),
 		RUNTIME_CLASS(CChildFrame),
 		RUNTIME_CLASS(CCircleView));
+	if (!pDocTemplate)
+		return FALSE;
+	AddDocTemplate(pDocTemplate);
+	pDocTemplate = new CMultiDocTemplate(IDR_BitmapTYPE,
+		RUNTIME_CLASS(CBitmapDoc),
+		RUNTIME_CLASS(CChildFrame),
+		RUNTIME_CLASS(CBitmapView));
 	if (!pDocTemplate)
 		return FALSE;
 	AddDocTemplate(pDocTemplate);

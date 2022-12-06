@@ -48,6 +48,12 @@
     <ClInclude Include="CCircleView.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CBitmapDoc.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CBitmapView.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MDITest.cpp">
@@ -74,6 +80,12 @@
     <ClCompile Include="CCircleView.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CBitmapDoc.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBitmapView.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="MDITest.reg" />
@@ -97,6 +109,12 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="res\icon1.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
