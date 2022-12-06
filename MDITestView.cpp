@@ -68,8 +68,26 @@ void CMDITestView::OnDraw(CDC* pDC)
 	// 현재까지 입력된 글자를 화면에 출력한다.
 	CRect rect;
 	GetClientRect(&rect);
-	pDC->DrawText(pDoc->m_str.GetData(),
-		pDoc->m_str.GetSize(), &rect, DT_LEFT);
+
+	CString str;
+	
+
+
+	CString strDefaultDocName, strBaseName, strExt, strNewName, strFilterName, strRegFileTypeId, strRegFileTypeName;
+	CDocTemplate* pDocTemplate = pDoc->GetDocTemplate();
+	if (!pDocTemplate->GetDocString(strBaseName, CDocTemplate::docName) || !pDocTemplate->GetDocString(strExt, CDocTemplate::filterExt) || !pDocTemplate->GetDocString(strNewName, CDocTemplate::fileNewName)
+		|| !pDocTemplate->GetDocString(strFilterName, CDocTemplate::filterName) || !pDocTemplate->GetDocString(strRegFileTypeId, CDocTemplate::regFileTypeId) || !pDocTemplate->GetDocString(strRegFileTypeName, CDocTemplate::regFileTypeName))
+	{
+		AfxThrowUserException(); // These doc template strings will
+		// be available if you created the application using AppWizard
+		// and specified the file extension as an option for
+		// the document class produced by AppWizard.
+	}
+	str.Format(_T("windowTitle:\n-docName: %s\n-fileNewName: %s\n-filterName: %s\n-filterExt: %s\n-regFileTypeid: %s\n-regFileTypeName: %s"), strBaseName, strNewName, strFilterName, strExt, strRegFileTypeId, strRegFileTypeName);
+
+	pDC->DrawText(str, &rect, DT_LEFT);
+
+	
 }
 
 
